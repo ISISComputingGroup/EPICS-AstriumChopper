@@ -18,12 +18,21 @@
     <ClInclude Include="AstriumBridgeLib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ChopperWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AstriumBridgeLib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MockChopper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MethodProxies.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
