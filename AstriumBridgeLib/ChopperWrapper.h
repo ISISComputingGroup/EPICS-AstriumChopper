@@ -4,6 +4,10 @@
 
 #include <string>
 #include <gcroot.h>
+#include <locale.h>
+#include <sstream>
+#include <iostream>
+#include <msclr/marshal_cppstd.h>
 
 using namespace System::Collections::Generic;
 
@@ -57,6 +61,10 @@ namespace Wrapper
 	public ref class MockChopper : public IChopper {
 		private:
 			System::String^ acceptString;
+			System::String^ rejectString;
+			System::String^ state;
+			double phase;
+			int speed;
 		public:
 			MockChopper(std::string controllerID);
 			virtual System::String^ Calibrate() override;
