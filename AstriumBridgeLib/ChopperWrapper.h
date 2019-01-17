@@ -13,7 +13,7 @@ using namespace System::Collections::Generic;
 
 namespace Wrapper
 {
-	public ref class IChopper
+	public ref class IChopper abstract
 	{
 		public:
 			virtual System::String^ Calibrate() = 0;
@@ -21,7 +21,6 @@ namespace Wrapper
 			virtual System::String^ SetGear(unsigned int channel, int speed) = 0;
 			virtual System::String^ SetPhase(unsigned int channel, double phase) = 0;
 			virtual System::String^ SetBrake(unsigned int channel) = 0;
-			virtual System::String^ SetResume(unsigned int channel) = 0;
 	};
 
 	public ref class AstriumChopper : public IChopper {
@@ -52,10 +51,6 @@ namespace Wrapper
 			virtual System::String^ SetBrake(unsigned int channel) override {
 				return chopper->SetBrake(channel);
 			};
-
-			virtual System::String^ SetResume(unsigned int channel) override {
-				return chopper->SetResume(channel);
-			};
 	};
 
 	public ref class MockChopper : public IChopper {
@@ -72,7 +67,6 @@ namespace Wrapper
 			virtual System::String^ SetGear(unsigned int channel, int speed) override;
 			virtual System::String^ SetPhase(unsigned int channel, double phase) override;
 			virtual System::String^ SetBrake(unsigned int channel) override;
-			virtual System::String^ SetResume(unsigned int channel) override;
 	};
 
 	// These proxies will allow us to use boost to bind to methods.
@@ -80,7 +74,6 @@ namespace Wrapper
 	System::String^ SetGearProxy(gcroot<Wrapper::IChopper^> This, unsigned int channel, int speed);
 	System::String^ SetPhaseProxy(gcroot<Wrapper::IChopper^> This, unsigned int channel, double phase);
 	System::String^ SetBrakeProxy(gcroot<Wrapper::IChopper^> This, unsigned int channel);
-	System::String^ SetResumeProxy(gcroot<Wrapper::IChopper^> This, unsigned int channel);
 	System::String^ CalibrateProxy(gcroot<Wrapper::IChopper^> This);
 }
 

@@ -54,11 +54,6 @@ namespace AstriumBridgeLib
 		return sendCommand(boost::bind<System::String^>(Wrapper::SetBrakeProxy, gcroot<Wrapper::IChopper^>(chopper), channel), result, size);
 	}
 
-	int AstriumChopper::Resume(unsigned int channel, char* result, int size)
-	{
-		return sendCommand(boost::bind<System::String^>(Wrapper::SetResumeProxy, gcroot<Wrapper::IChopper^>(chopper), channel), result, size);
-	}
-
 	int AstriumChopper::Calibrate(char* result, int size)
 	{
 		return sendCommand(boost::bind<System::String^>(Wrapper::CalibrateProxy, gcroot<Wrapper::IChopper^>(chopper)), result, size);
@@ -103,7 +98,3 @@ __declspec(dllexport) int Calibrate(char* result, int size)
 	return AstriumBridgeLib::AstriumChopper::Calibrate(result, size);
 }
 
-__declspec(dllexport) int Resume(unsigned int channel, char* result, int size)
-{
-	return AstriumBridgeLib::AstriumChopper::Resume(channel, result, size);
-}

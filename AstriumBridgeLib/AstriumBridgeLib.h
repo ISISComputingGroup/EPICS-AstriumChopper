@@ -23,6 +23,5 @@ namespace AstriumBridgeLib {
 		static int SetFreq(unsigned int channel, int speed, char* result, int size);
 		static int SetPhase(unsigned int channel, double phase, char* result, int size);
 		static int Brake(unsigned int channel, char* result, int size);
-		static int Resume(unsigned int channel, char* result, int size);
 	};
 }

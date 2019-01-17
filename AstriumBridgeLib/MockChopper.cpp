@@ -51,8 +51,4 @@ namespace Wrapper
 		speed = 0;
 		return acceptString;
 	}
-
-	System::String^ MockChopper::SetResume(unsigned int channel) {
-		return acceptString;
-	}
 }

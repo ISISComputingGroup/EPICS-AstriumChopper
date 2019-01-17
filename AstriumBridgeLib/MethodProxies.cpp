@@ -20,10 +20,6 @@ namespace Wrapper
 		return This->SetBrake(channel);
 	}
 
-	System::String^ SetResumeProxy(gcroot<Wrapper::IChopper^> This, unsigned int channel) {
-		return This->SetResume(channel);
-	}
-
 	System::String^ CalibrateProxy(gcroot<Wrapper::IChopper^> This) {
 		return This->Calibrate();
 	}
