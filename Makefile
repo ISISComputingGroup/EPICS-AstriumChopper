@@ -4,11 +4,17 @@ include $(TOP)/configure/CONFIG
 
 include $(TOP)/configure/RULES_TOP
 
+ifeq ($(findstring 10.0,$(VCVERSION)),)
+SOLUTION = AstriumChopperVS2017.sln
+else
+SOLUTION = AstriumChopper.sln
+endif
+
 install:
-	build.bat
+	build.bat $(SOLUTION)
 
 clean:
-	unbuild.bat
+	unbuild.bat $(SOLUTION)
 
 uninstall:
 	$(RMDIR) $(TOP)/bin/$(EPICS_HOST_ARCH)

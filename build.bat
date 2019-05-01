@@ -6,52 +6,52 @@ mkdir lib\%EPICS_HOST_ARCH%
 
 if /I "%EPICS_HOST_ARCH%" == "windows-x64-debug" (
     set BUILD_DIR=x64\Debug
-    call msbuild.exe /p:Configuration=Debug;Platform=x64 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Debug;Platform=x64 %1
 )
 
 if /I "%EPICS_HOST_ARCH%" == "windows-x64" (
     set BUILD_DIR=x64\Release
-    call msbuild.exe /p:Configuration=Release;Platform=x64 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Release;Platform=x64 %1
 )
     
 if /I "%EPICS_HOST_ARCH%" == "windows-x64-static-debug" (
     set BUILD_DIR=x64\Debug
-    call msbuild.exe /p:Configuration=Debug;Platform=x64 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Debug;Platform=x64 %1
 )
 
 if /I "%EPICS_HOST_ARCH%" == "windows-x64-static" (
     set BUILD_DIR=x64\Release
-    call msbuild.exe /p:Configuration=Release;Platform=x64 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Release;Platform=x64 %1
 )
 
 if /I "%EPICS_HOST_ARCH%" == "windows-x64-static_md-debug" (
     set BUILD_DIR=x64\Debug
-    call msbuild.exe /p:Configuration=Debug;Platform=x64 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Debug;Platform=x64 %1
 )
 
 if /I "%EPICS_HOST_ARCH%" == "windows-x64-static_md" (
     set BUILD_DIR=x64\Release
-    call msbuild.exe /p:Configuration=Release;Platform=x64 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Release;Platform=x64 %1
 )
 
 if /I "%EPICS_HOST_ARCH%" == "win32-x86-debug" (
     set BUILD_DIR=Debug
-    call msbuild.exe /p:Configuration=Debug;Platform=x86 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Debug;Platform=x86 %1
 )
 
 if /I "%EPICS_HOST_ARCH%" == "win32-x86" (
     set BUILD_DIR=Release
-    call msbuild.exe /p:Configuration=Release;Platform=x86 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Release;Platform=x86 %1
 )
 
 if /I "%EPICS_HOST_ARCH%" == "win32-x86-static-debug" (
     set BUILD_DIR=Debug
-    call msbuild.exe /p:Configuration=Debug;Platform=x86 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Debug;Platform=x86 %1
 )
 
 if /I "%EPICS_HOST_ARCH%" == "win32-x86-static" (
     set BUILD_DIR=Release
-    call msbuild.exe /p:Configuration=Release;Platform=x86 AstriumChopper.sln
+    call msbuild.exe /p:Configuration=Release;Platform=x86 %1
 )
 
 if %ERRORLEVEL% neq 0 goto PROBLEM

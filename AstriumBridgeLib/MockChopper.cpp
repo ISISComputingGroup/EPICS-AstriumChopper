@@ -36,6 +36,7 @@ namespace Wrapper
 			return rejectString + gcnew System::String("Invalid speed");
 		} else {
 			this->speed = speed * 10; //Device actually sends 10 times what is set
+			this->phase = -1.0; //Device corrupts the phase setpoint in some way when speed is sent. This is a hardware bug which we are emulating.
 			state = "POSITION";
 			return acceptString;
 		}
