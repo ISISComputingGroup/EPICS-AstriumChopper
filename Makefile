@@ -5,7 +5,7 @@ include $(TOP)/configure/CONFIG
 include $(TOP)/configure/RULES_TOP
 
 ifeq ($(findstring 10.0,$(VCVERSION)),)
-SOLUTION = AstriumChopperVS2017.sln
+SOLUTION = AstriumChopperVS2019.sln
 else
 SOLUTION = AstriumChopper.sln
 endif
