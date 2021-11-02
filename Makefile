@@ -19,3 +19,6 @@ clean:
 uninstall:
 	$(RMDIR) $(TOP)/bin/$(EPICS_HOST_ARCH)
 	$(RMDIR) $(TOP)/lib/$(EPICS_HOST_ARCH)
+
+ioctests:
+	.\system_tests\run_tests.bat
