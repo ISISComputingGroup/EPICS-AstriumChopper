@@ -1,4 +1,8 @@
 @echo off
+setlocal
+
+REM this is defined by IBEX and causes issues with C# compiler
+set INSTRUMENT=
 
 REM Create an EPICS style layout
 mkdir bin\%EPICS_HOST_ARCH%

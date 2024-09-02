@@ -1,4 +1,8 @@
 @echo off
+setlocal
+
+REM this is defined by IBEX and causes issues with C# compiler
+set INSTRUMENT=
 
 call %~dp0vcversion.bat
 
